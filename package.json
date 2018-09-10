@@ -1,0 +1,22 @@
+{
+	"name": "ssh_locksmith",
+	"version": "0.1.0",
+	"description": "Script to manage (add or delete) ssh keys for different users",
+	"main": "index.js",
+	"author": "Vishal Sood <vishal.sood@smartprix.com> (http://www.smartprix.com)",
+	"dependencies": {
+		"command-line-args": "^4.0.7",
+		"command-line-commands": "^2.0.1",
+		"command-line-usage": "^4.1.0",
+		"nodemailer": "^4.6.8",
+		"sm-utils": "^2.14.5"
+	},
+	"devDependencies": {
+		"eslint": "^4.19.1",
+		"eslint-config-smartprix": "^3.4.2"
+	},
+	"eslintConfig": {
+		"extends": "smartprix",
+		"rules": {}
+	}
+}
