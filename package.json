@@ -9,7 +9,7 @@
 		"command-line-commands": "^2.0.1",
 		"command-line-usage": "^4.1.0",
 		"nodemailer": "^4.6.8",
-		"sm-utils": "^2.14.5"
+		"sm-utils": "^2.15.1"
 	},
 	"devDependencies": {
 		"eslint": "^4.19.1",
