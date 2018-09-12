@@ -11,6 +11,7 @@ const transporter = nodemailer.createTransport({
 });
 
 async function sendMail(email, user, pathToPrivateKey) {
+    console.log(`Sending private key for ${user}@${cfg('hostname')} (will take some time...)`)
     return transporter.sendMail({
         from: 'admin@smartprix.com',
         to: email,

@@ -1,6 +1,10 @@
+const {cfg} = require('sm-utils');
 const commandLineCommands = require('command-line-commands');
 const commandLineArgs = require('command-line-args');
 const commandLineUsage = require('command-line-usage');
+
+cfg.file(`${__dirname}/config.js`);
+
 const operations = require('./sshKeyOperations');
 
 const validCommands = [null, 'help', 'add', 'del'];
