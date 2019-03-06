@@ -11,7 +11,7 @@ const transporter = nodemailer.createTransport({
 });
 
 async function sendMail(email, user, pathToPrivateKey) {
-	console.log(`Sending private key for ${user}@${cfg('hostname')} (will take some time...)`)
+	console.log(`Sending private key for ${user}@${cfg('hostname')} (will take some time...)`);
 	return transporter.sendMail({
 		from: 'admin@smartprix.com',
 		to: email,
@@ -34,7 +34,7 @@ async function addUserKeyFor(user, email) {
 	await System.exec(`ssh-keygen -t rsa -f ${keyName} -C "${email}" -N ""`);
 	console.log('New key pair generated');
 
-	// copy public key to authorized_keys for 
+	// copy public key to authorized_keys for
 	const file = new File(`${authorizedKeysDir}/${user}`);
 	const pubKey = new File(`./${keyName}.pub`);
 	const priKey = new File(`./${keyName}`);
@@ -52,16 +52,18 @@ async function addUserKeyFor(user, email) {
 async function deleteUserKeyFor(user, email) {
 	// delete authorized_keys entry in the given user for the given email
 	await System.exec(`sed -i '/${email}/d' ${authorizedKeysDir}/${user}`);
-	console.log(`Deleted keys for ${user} associated with ${email}`)
+	console.log(`Deleted keys for ${user} associated with ${email}`);
 }
 
 async function deleteAllKeysFor(email) {
 	// delete authorized_keys entries in all users for the given email
-	const existingUsers = fs.readdirSync(authorizedKeysDir)
+	const existingUsers = fs.readdirSync(authorizedKeysDir);
 
-	const result = await Vachan.promiseMap(existingUsers, async (user) => deleteUserKeyFor(user, email));
+	const result = await Vachan.promiseMap(existingUsers,
+		async user => deleteUserKeyFor(user, email)
+	);
 
-	console.log(`Deleted all keys associated with ${email}`)
+	console.log(`Deleted all keys associated with ${email}`);
 	return result;
 }
 
