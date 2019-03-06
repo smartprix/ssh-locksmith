@@ -5,7 +5,7 @@ const commandLineUsage = require('command-line-usage');
 
 cfg.file(`${__dirname}/config.js`);
 
-const operations = require('../sshKeyOperations');
+const operations = require('../index');
 
 const validCommands = [null, 'help', 'add', 'del'];
 const {command, argv} = commandLineCommands(validCommands);
