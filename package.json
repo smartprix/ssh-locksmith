@@ -1,8 +1,9 @@
 {
-	"name": "ssh_locksmith",
+	"name": "ssh-locksmith",
 	"version": "0.1.0",
 	"description": "Script to manage (add or delete) ssh keys for different users",
 	"main": "index.js",
+	"bin": "bin/ssh-locksmith.js",
 	"author": "Vishal Sood <vishal.sood@smartprix.com> (http://www.smartprix.com)",
 	"dependencies": {
 		"command-line-args": "^4.0.7",
