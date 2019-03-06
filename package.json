@@ -4,6 +4,14 @@
 	"description": "Script to manage (add or delete) ssh keys for different users",
 	"main": "index.js",
 	"bin": "bin/ssh-locksmith.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/smartprix/ssh-lockmith.git"
+	},
+	"bugs": {
+		"url": "https://github.com/smartprix/ssh-lockmith/issues"
+	},
+	"homepage": "https://github.com/smartprix/ssh-lockmith",
 	"author": "Vishal Sood <vishal.sood@smartprix.com> (http://www.smartprix.com)",
 	"dependencies": {
 		"command-line-args": "^4.0.7",
