@@ -16,6 +16,14 @@
 		"eslint": "^4.19.1",
 		"eslint-config-smartprix": "^3.4.2"
 	},
+	"keywords": [
+		"ssh",
+		"cli",
+		"key",
+		"management",
+		"ssh-keys",
+		"authorized-keys"
+	],
 	"eslintConfig": {
 		"extends": "smartprix",
 		"rules": {
