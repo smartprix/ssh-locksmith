@@ -1,4 +1,4 @@
-const {cfg} = require('sm-utils');
+const {cfg, Vachan} = require('sm-utils');
 const commandLineCommands = require('command-line-commands');
 const commandLineArgs = require('command-line-args');
 const commandLineUsage = require('command-line-usage');
@@ -80,38 +80,29 @@ let options = commandLineArgs(optionDefinitions, {argv});
 // let res;
 
 async function performCommand(com) {
-	try {
-		switch (com) {
-			case 'add':
-				options = options.add;
-				if (!options.user || !options.email) {
-					console.error('Email/User not provided (required)');
-				}
-				else {
-					await operations.addUserKeyFor(options.user, options.email)
-				}
-				break;
-
-			case 'del':
-				options = options.del;
-				if (!options.email) {
-					console.error('Email not provided (required)');
-				}
-				else if (options.all) await operations.deleteAllKeysFor(options.email);
-				else {
-					if (!options.user) console.error('User not provided (required)');
-					else await operations.deleteUserKeyFor(options.user, options.email);
-				}
-				break;
-
-			default:
-				console.log(usage);
-				break;
-		}
-	}
-	catch (err) {
-		console.error(err);
+	switch (com) {
+		case 'add':
+			options = options.add;
+			if (!options.user || !options.email) {
+				console.error('Email/User not provided (required)');
+			}
+			else {
+				await operations.addUserKeyFor(options.user, options.email);
+			}
+			break;
+		case 'del':
+			options = options.del;
+			if (!options.email) {
+				console.error('Email not provided (required)');
+			}
+			else if (options.all) await operations.deleteAllKeysFor(options.email);
+			else if (!options.user) console.error('User not provided (required)');
+			else await operations.deleteUserKeyFor(options.user, options.email);
+			break;
+		default:
+			console.log(usage);
+			break;
 	}
 }
 
-performCommand(command);
+Vachan.exit(performCommand(command));

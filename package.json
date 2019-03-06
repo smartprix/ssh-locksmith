@@ -18,6 +18,8 @@
 	},
 	"eslintConfig": {
 		"extends": "smartprix",
-		"rules": {}
+		"rules": {
+			"vue/script-indent": 0
+		}
 	}
 }
