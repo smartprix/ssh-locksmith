@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 const {cfg, Vachan} = require('sm-utils');
 const commandLineCommands = require('command-line-commands');
 const commandLineArgs = require('command-line-args');
