@@ -1,6 +1,6 @@
 {
 	"name": "ssh-locksmith",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "Script to manage (add or delete) ssh keys for different users",
 	"main": "index.js",
 	"bin": "bin/ssh-locksmith.js",
