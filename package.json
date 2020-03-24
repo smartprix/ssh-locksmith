@@ -6,12 +6,12 @@
 	"bin": "bin/ssh-locksmith.js",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/smartprix/ssh-lockmith.git"
+		"url": "git+https://github.com/smartprix/ssh-locksmith.git"
 	},
 	"bugs": {
-		"url": "https://github.com/smartprix/ssh-lockmith/issues"
+		"url": "https://github.com/smartprix/ssh-locksmith/issues"
 	},
-	"homepage": "https://github.com/smartprix/ssh-lockmith",
+	"homepage": "https://github.com/smartprix/ssh-locksmith",
 	"author": "Vishal Sood <vishal.sood@smartprix.com> (http://www.smartprix.com)",
 	"dependencies": {
 		"command-line-args": "^4.0.7",
